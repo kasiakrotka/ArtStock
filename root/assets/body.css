@@ -243,6 +243,7 @@ body,h1,h2,h3,p{
         padding: 2em 2em;
         z-index: 0;
     }
+    
     .art-of-day-container{
         display: flex;
         flex-direction: row;
