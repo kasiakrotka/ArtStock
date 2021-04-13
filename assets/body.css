@@ -1,0 +1,261 @@
+*,
+*::before, 
+*::after{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body,h1,h2,h3,p{
+    margin: 0;
+}
+
+.main-page-container{
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+.menu{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    /* margin: 0.625em 1em; */
+    margin: 0 1em;
+    border: 1px rgb(214, 214, 214) solid;
+    border-top: none;
+    transform: translateY(-100%);
+    transition: all .5s ease-in-out;
+    padding-left: 1em;
+    z-index: 1;
+    
+}
+
+.menu-slide{
+    transform: translateY(0%);
+    box-shadow: rgba(50, 50, 93, 0.2) 0px 6px 12px -2px, rgba(0, 0, 0, 0.2) 0px 3px 7px -3px;
+}
+
+.not-visible{
+    display: none;
+}
+
+.artist-links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: left;
+    padding-left: 12px;
+}
+
+.artist-links a{
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+    font-size: 1.1em;
+    line-height: 2em;
+/*     padding-left: 15px;
+ */}
+
+.artist-links a::after{
+    content: "|";
+    padding: 0 15px;
+}
+
+
+.artist-links a:last-of-type:after{
+    display: none;
+}
+
+.artist-links a:hover{
+    color: rgb(160, 160, 160);
+}
+
+.a-big{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-left: 15px;
+}
+
+.a-home{
+    text-transform: uppercase;
+    color: rgb(192, 32, 32);
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-left: 15px;
+}
+
+.a-home:hover{
+    color:rgb(192, 32, 32);;
+}
+
+.active-link-menu{
+    border-left: black solid 3px;
+    padding-left: 12px;
+    font-weight: 600;
+}
+
+.a-big:hover{
+    color: black;
+}
+
+.home{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    padding: 2em 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.home h1{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: .3em;
+    margin-bottom: .6em;
+    border-bottom: .1em solid black;
+}
+
+.art-of-day-container{
+  
+}
+
+.img-container{
+    width: 100%;
+    background-color:  rgb(241, 241, 241);
+    padding: 5% 5%;
+}
+
+.img-container img{
+    max-width:100%;
+    max-height:100%;
+}
+
+
+.art-of-day-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#title-of-day{
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: calc(1.3rem + .6vw);
+    line-height: 1.2;
+    padding-top: .8em;
+    font-weight: 600;
+    margin: 0;
+}
+
+#artist-of-day{
+    color: rgb(192, 32, 32);
+    text-decoration: none;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+#year-of-day{
+    color: rgb(150, 150, 150);
+}
+
+#year-of-day::before{
+    content: " • ";
+}
+
+#desc-of-day{
+    color: rgb(150, 150, 150);
+    text-align: justify;
+}
+
+@media (max-width: 629px){
+    html{
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 630px)
+{ 
+    .main-page-container{
+        flex-direction: row;
+    }
+
+    .a-big{
+        font-size: 1.4em;
+    }
+
+    .a-home{
+        font-size: 1.4em;
+    }
+
+    .menu{
+        background-color: transparent;
+        transform: none;
+        z-index: 0;
+        width: auto;
+        border: none;
+        padding-top: 1em;
+        padding-left: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .artist-links{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .artist-links a::after {
+        display: none;
+    }
+
+    .home{
+        z-index: 0;
+        position: relative;
+    }
+
+}
+
+@media (min-width: 1024px)
+{ 
+    #title-of-day{
+        padding-top: 0;
+    }
+
+    .home{
+        padding-right: 0;
+        z-index: 0;
+    }
+    .art-of-day-container{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .img-container{
+        width: 50%;
+        padding: 2% 2%;
+    }
+
+    .desc-container-of-day{
+        padding-left: 2em;
+        width: 50%;
+    }
+}

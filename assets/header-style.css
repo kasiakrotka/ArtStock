@@ -1,0 +1,156 @@
+header {
+    width: 100%;
+    border-bottom: 1px rgb(214, 214, 214) solid;
+    background-color: white;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;
+    position: relative;
+    z-index: 4;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.625em 1em;
+}
+
+.logo-pic {
+    width: 45px;
+    height: 45px;
+    background-color: rgb(214, 37, 37);
+    margin-right: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.logo-pic::after {
+    content: "";
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    z-index: 0;
+    left: 10px;
+    bottom: 10px;
+}
+
+.logo-text {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h2 {
+    margin: 0;
+    font-size: 1.75em;
+    line-height: 30px;
+}
+
+.logo-text p {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.625em;
+    line-height: 0.875em;
+    padding-left: 0.2rem;
+}
+
+.search-div {
+    padding: 0.625em 1em;
+    min-width: 300px;
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* border-left: 1px rgb(214, 214, 214) solid; */
+    transition: all 0.5s ease;
+}
+
+.input-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.search-input {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 0;
+}
+
+.search-input:focus {
+    outline: none;
+    /*border-bottom: solid grey 1px;*/
+}
+
+.line{
+    margin-top: 1px;
+    width: 1px;
+    height: 1px;
+    transition: all 1s ease;
+}
+
+.search-input:focus + .line{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(172, 172, 172);
+}
+
+.search-btn {
+    all: unset;
+    padding: .5em 1em;
+    /* width: 80px; */
+   /*  border: 1px rgb(214, 214, 214) solid; */
+    text-align: center;
+    font-size: 1.125em;
+    transition: all 0.5s ease;
+}
+.search-btn:focus{
+    outline: none;
+}
+
+.btn-hamburger-menu{
+    all: unset;
+    /* width: 80px; */
+   /*  border: 1px rgb(214, 214, 214) solid; */
+    text-align: center;
+    font-size: 1.4em;
+    border-radius: 5%;
+    background-color: rgb(235, 235, 235);
+    transition: all 0.5s ease;
+    padding: 0 .5em;
+    margin-right: .5em;
+}
+
+.btn-hamburger-menu:focus{
+    outline: none;
+}
+
+
+
+@media (min-width: 584px)
+{
+    .search-div{
+        border-left: 1px rgb(214, 214, 214) solid;
+        border-right: 1px rgb(214, 214, 214) solid;
+    }
+    .search-div:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+    }
+
+    .btn-hamburger-menu{
+        display: none;
+    }
+}
