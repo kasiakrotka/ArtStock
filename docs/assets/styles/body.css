@@ -42,10 +42,10 @@ body,h1,h2,h3,p{
 }
 
 .not-visible{
-    display: none;
+    display: none !important;
 }
 
-.artist-links{
+.menu-links{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,7 +54,7 @@ body,h1,h2,h3,p{
     padding-left: 12px;
 }
 
-.artist-links a{
+.menu-links a{
     color: rgb(59, 59, 59);
     text-decoration: none;
     font-size: 1.1em;
@@ -62,17 +62,17 @@ body,h1,h2,h3,p{
 /*     padding-left: 15px;
  */}
 
-.artist-links a::after{
+.menu-links a::after{
     content: "|";
     padding: 0 15px;
 }
 
 
-.artist-links a:last-of-type:after{
+.menu-links a:last-of-type:after{
     display: none;
 }
 
-.artist-links a:hover{
+.menu-links a:hover{
     color: rgb(160, 160, 160);
 }
 
@@ -181,6 +181,28 @@ body,h1,h2,h3,p{
     text-align: justify;
 }
 
+.list{
+    margin-top: 2em;
+    columns: 1;
+    width: 100%;
+}
+
+.list a{
+    text-decoration: none;
+    display: block;
+    line-height: 2em;
+    color: rgb(88, 100, 206);
+}
+
+.list a:hover{
+    color: rgb(71, 80, 163);
+}
+
+.list a>sup{
+    padding-left: .5em;
+    color: grey;
+}
+
 @media (max-width: 629px){
     html{
         font-size: 12px;
@@ -189,6 +211,10 @@ body,h1,h2,h3,p{
 
 @media (min-width: 630px)
 { 
+    .list{
+        columns: 2;
+    }
+
     .main-page-container{
         flex-direction: row;
     }
@@ -213,12 +239,12 @@ body,h1,h2,h3,p{
         box-shadow: none;
     }
 
-    .artist-links{
+    .menu-links{
         flex-direction: column;
         flex-wrap: nowrap;
     }
 
-    .artist-links a::after {
+    .menu-links a::after {
         display: none;
     }
 
@@ -231,6 +257,11 @@ body,h1,h2,h3,p{
 
 @media (min-width: 1024px)
 { 
+
+    .list{
+        columns: 3;
+    }
+
     #title-of-day{
         padding-top: 0;
     }

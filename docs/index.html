@@ -6,12 +6,15 @@
     <meta name="description" content="">
     <title>ArtStock</title>
     <meta name="vieport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/body.css">
-    <link rel="stylesheet" href="assets/header-style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-    <script src="assets/app.js" defer></script>
+    <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon" />
     <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="assets/styles/body.css">
+    <link rel="stylesheet" href="assets/styles/header-style.css">
+    <!-- SCRIPTS -->
+    <script src="assets/scripts/app.js" type="module" defer></script>
 </head>
 
 <body>
@@ -24,9 +27,9 @@
             </div>
         </div>
         <div class="search-div">
-                <button class="btn-hamburger-menu">
-                    <i class="bi bi-list"></i>
-                </button>
+            <button class="btn-hamburger-menu">
+                <i class="bi bi-list"></i>
+            </button>
             <div class="input-container">
                 <input class="search-input" type="text" placeholder="Search...">
                 <div class="line"></div>
@@ -43,49 +46,78 @@
             </section>
             <section>
                 <div>
-                    <a class="a-big" onclick="return false;" data-toggle="collapse" href="#collapseArtists" role="button"
-                    aria-expanded="false" aria-controls="collapseArtists">
-                    Artists
+                    <a class="a-big" onclick="return false;" data-toggle="collapse" href="#artists-links"
+                        role="button" aria-expanded="false" aria-controls="artists-links">
+                        Artists
                     </a>
                 </div>
-                <div class="collapse artist-links" id="collapseArtists">
-                    <a onclick="return false;" href="">A-Z</a>
-                    <a onclick="return false;" href="">Genres</a>
-                    <a onclick="return false;" href="">Centuries</a>
-                    <a onclick="return false;" href="">Nationalities</a>
+                <div class="collapse menu-links" id="artists-links">
+                    <a data-filter="alphabetic" onclick="return false;" href="">A-Z</a>
+                    <a data-filter="styles" onclick="return false;" href="">Styles</a>
+                    <a data-filter="fields" onclick="return false;" href="">Fields</a>
+                    <a data-filter="nationalities" onclick="return false;" href="">Nationalities</a>
                 </div>
             </section>
             <section>
                 <div>
-                    <a class="a-big" onclick="return false;" data-toggle="collapse" href="#collapsaArtworks" role="button"
-                    aria-expanded="false" aria-controls="collapsaArtworks">
-                    Artworks
+                    <a class="a-big" onclick="return false;" data-toggle="collapse" href="#artworks-links"
+                        role="button" aria-expanded="false" aria-controls="artworks-links">
+                        Artworks
                     </a>
                 </div>
-                <div class="collapse artist-links" id="collapsaArtworks">
-                    <a onclick="return false;" href="">Styles</a>
-                    <a onclick="return false;" href="">Genres</a>
-                    <a onclick="return false;" href="">Media</a>
+                <div class="collapse menu-links" id="artworks-links">
+                    <a data-filter="genres" onclick="return false;" href="">Genres</a>
+                    <a data-filter="media" onclick="return false;" href="">Media</a>
                 </div>
             </section>
         </div>
-        <div class="home"> 
+        <div id="home-page" class="home">
             <h1 class="article-title">Artwork of the day</h1>
             <div class="art-of-day-container">
                 <div class="img-container">
-                    <img id="img-of-day" src="https://uploads8.wikiart.org/images/derek-boshier/the-identi-kit-man-1962.jpg!Large.jpg" 
-                         alt="Artwork of the day"/>
+                    <img id="img-of-day"
+                        src="https://uploads8.wikiart.org/images/derek-boshier/the-identi-kit-man-1962.jpg!Large.jpg"
+                        alt="Artwork of the day" />
                 </div>
                 <div class="desc-container-of-day">
                     <a onclick="return false;" href="" id="title-of-day">Painting title</a>
-                    <a onclick="return false;" href="" id="artist-of-day">Name Surname Nickname</a><span id="year-of-day">1500-1600</span>
+                    <a onclick="return false;" href="" id="artist-of-day">Name Surname Nickname</a><span
+                        id="year-of-day">1500-1600</span>
                     <div id="desc-of-day">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mi nisi, sollicitudin non ornare nec, venenatis sed libero. Suspendisse luctus elementum egestas. Vestibulum sit amet lectus sapien. Vestibulum nulla sem, ultricies id massa vel, suscipit tempor orci. Sed vel luctus nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas turpis elit, rutrum sed pretium id, luctus aliquet nulla.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mi nisi, sollicitudin non
+                        ornare nec, venenatis sed libero. Suspendisse luctus elementum egestas. Vestibulum sit amet
+                        lectus sapien. Vestibulum nulla sem, ultricies id massa vel, suscipit tempor orci. Sed vel
+                        luctus nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                        mus. Maecenas turpis elit, rutrum sed pretium id, luctus aliquet nulla.
                     </div>
                 </div>
             </div>
         </div>
+        <div id="list-page" class="home not-visible">
+            <h1 class="article-title">Artists list in A-Z order</h1>
+            <div class="list-desc-container">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mi nisi, sollicitudin non ornare
+                nec, venenatis sed libero. Suspendisse luctus elementum egestas. Vestibulum sit amet lectus sapien.
+                Vestibulum nulla sem, ultricies id massa vel, suscipit tempor orci. Sed vel luctus nibh. Orci varius
+                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas turpis elit, rutrum
+                sed pretium id, luctus aliquet nulla.
+            </div>
+            <div class="list" id="links-list">
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+                <a onclick="return false;" href="">Andy Warhol</a>
+            </div>
+        </div>
     </div>
+    <!--BOOTSTRAP SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
