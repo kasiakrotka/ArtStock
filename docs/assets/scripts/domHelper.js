@@ -12,13 +12,17 @@ export class DomHelper {
     const homePage = document.getElementById("home-page");
     const listPage = document.getElementById("list-page");
     const listElem = listPage.querySelector("#links-list");
+    const profilePage = document.getElementById("artist-profile");
+
     switch (mode) {
       case "home":
+        profilePage.classList.add("not-visible");
         listPage.classList.add("not-visible");
         homePage.classList.remove("not-visible");
         this.mode = "home";
         break;
       case "list":
+        profilePage.classList.add("not-visible");
         homePage.classList.add("not-visible");
         listPage.classList.remove("not-visible");
         listElem.innerHTML = "";
@@ -27,6 +31,7 @@ export class DomHelper {
         this.mode = "list";
         break;
       case "artists-list":
+        profilePage.classList.add("not-visible");
         homePage.classList.add("not-visible");
         listPage.classList.remove("not-visible");
         listElem.innerHTML = "";
@@ -34,14 +39,28 @@ export class DomHelper {
         listElem.classList.add("profiles-list");
         this.mode = "artists-list";
         break;
+      case "artists-profile":
+        homePage.classList.add("not-visible");
+        listPage.classList.add("not-visible");
+        profilePage.classList.remove("not-visible");
+        break;
       default:
         console.error("no such case for changeView() function");
         break;
     }
   }
 
+  static removeEventListeners(element){
+    var old_element = element
+    var new_element = element.cloneNode(true);
+    old_element.parentNode.replaceChild(new_element, old_element);
+    return new_element;
+  }
+
   static addLinksToDOM(linksArray, showData) {
-    const linksList = document.querySelector("#links-list");
+    let linksList = document.querySelector("#links-list");
+    linksList = this.removeEventListeners(linksList);
+
     linksList.innerHTML = "";
     linksArray.forEach((link, index) => {
       const linkElement = document.createElement("a");
@@ -57,6 +76,7 @@ export class DomHelper {
     });
 
     linksList.addEventListener("click", (event) => {
+      this.removeEventListeners(linksList);
       event.stopImmediatePropagation();
       const index = event.target.closest("a").dataset.id;
       if (this.currentFlterMode === "artists-links") {

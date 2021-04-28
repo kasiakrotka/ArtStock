@@ -247,6 +247,49 @@ body,h1,h2,h3,p{
     max-height: 100%;
 }
 
+.profile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.img-bg-big{
+    width: 50%;
+    height: 400px;
+    text-align: center;
+    background-color: rgb(243, 243, 243);;
+}
+
+.img-bg-big img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.profile-card{
+    max-width: 50%;
+    padding-left: 3em;
+}
+
+.profile-card h2{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.profile-card h6{
+    color: grey;
+    margin-top: .5em;
+}
+
+.profile-card p{
+    line-height: 2em;
+    font-weight: lighter;
+    color: grey;
+}
+
+.profile-card p>span{
+    color: black;
+}
 @media (max-width: 629px){
     html{
         font-size: 12px;
