@@ -1,4 +1,5 @@
 import { GlobalData } from "./globalData.js";
+import { vanGoghsArt, andyWarholArt, picassoArt, daVinciArt, munchArt, monetArt, hopperArt, beksinskiArt} from "./art.js";
 
 class Artist {
   active_years;
@@ -124,6 +125,16 @@ export const artistsData = [
     "Zdzisław Beksiński"
   ),
 ];
+
+
+artistsData[0].arts = andyWarholArt;
+artistsData[1].arts = picassoArt;
+artistsData[2].arts = vanGoghsArt;
+artistsData[3].arts = daVinciArt;
+artistsData[4].arts = munchArt;
+artistsData[5].arts = monetArt;
+artistsData[6].arts = hopperArt;
+artistsData[7].arts = beksinskiArt;
 
 artistsData[0].portrait_url = "https://upload.wikimedia.org/wikipedia/commons/4/42/Andy_Warhol_1975.jpg";
 artistsData[1].portrait_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/800px-Pablo_picasso_1.jpg";

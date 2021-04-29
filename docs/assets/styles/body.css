@@ -237,9 +237,11 @@ body,h1,h2,h3,p{
 
 .img-bg{
     background-color: rgb(243, 243, 243);
-    text-align: center;
     height: 180px;
     margin-bottom: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-bg img{
@@ -252,7 +254,7 @@ body,h1,h2,h3,p{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    margin-bottom: 2em;
 }
 .img-bg-big{
     width: 50%;
@@ -290,6 +292,22 @@ body,h1,h2,h3,p{
 .profile-card p>span{
     color: black;
 }
+
+.profile-art-list{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#artist-profile h1 {
+    font-weight: bold;
+    color: rgb(85, 85, 85);
+}
+
+#artist-profile h1 span {
+    color: black;
+}
+
 @media (max-width: 629px){
     html{
         font-size: 12px;
