@@ -256,11 +256,18 @@ body,h1,h2,h3,p{
     flex-wrap: wrap;
     margin-bottom: 2em;
 }
+
 .img-bg-big{
     width: 50%;
-    height: 400px;
-    text-align: center;
+    height: 400px; 
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
     background-color: rgb(243, 243, 243);;
+}
+
+#art-profile .img-bg-big{
+    width: 60%;
 }
 
 .img-bg-big img{
@@ -273,6 +280,10 @@ body,h1,h2,h3,p{
     padding-left: 3em;
 }
 
+#art-profile .profile-card{
+    max-width: 40%;
+}
+
 .profile-card h2{
     font-weight: bold;
     font-size: 1.5em;
@@ -281,6 +292,7 @@ body,h1,h2,h3,p{
 .profile-card h6{
     color: grey;
     margin-top: .5em;
+    margin-bottom: 1em;
 }
 
 .profile-card p{

@@ -1,3 +1,4 @@
+import { ArtProfile } from "./artProfile.js";
 import { DomHelper } from "./domHelper.js";
 
 export class ArtistsProfile {
@@ -5,6 +6,7 @@ export class ArtistsProfile {
     this.artistsData = artistsData;
     this.createProfile();
     this.addArtsToProfile();
+    this.connectArts();
     DomHelper.changeView("artists-profile");
   }
 
@@ -48,6 +50,16 @@ export class ArtistsProfile {
       linkElemImg.src = art.url ? art.url : "";
       linkElemImg.alt = art.title;
       artList.append(linkElem);
+    });
+  }
+
+  connectArts() {
+    let listElem = document.querySelector("#art-list");
+    listElem = DomHelper.removeEventListeners(listElem);
+    listElem.addEventListener("click", (event) => {
+      event.stopImmediatePropagation();
+      const index = event.target.closest(".small-profile").dataset.id;
+      new ArtProfile(this.artistsData.arts[index], this.artistsData.name);
     });
   }
 }

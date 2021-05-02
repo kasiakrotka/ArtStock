@@ -13,17 +13,20 @@ export class DomHelper {
     const listPage = document.getElementById("list-page");
     const listElem = listPage.querySelector("#links-list");
     const profilePage = document.getElementById("artist-profile");
+    const artProfile = document.getElementById("art-profile");
 
     switch (mode) {
       case "home":
         profilePage.classList.add("not-visible");
         listPage.classList.add("not-visible");
+        artProfile.classList.add("not-visible");
         homePage.classList.remove("not-visible");
         this.mode = "home";
         break;
       case "list":
         profilePage.classList.add("not-visible");
         homePage.classList.add("not-visible");
+        artProfile.classList.add("not-visible");
         listPage.classList.remove("not-visible");
         listElem.innerHTML = "";
         listElem.classList.remove("profiles-list");
@@ -43,6 +46,12 @@ export class DomHelper {
         homePage.classList.add("not-visible");
         listPage.classList.add("not-visible");
         profilePage.classList.remove("not-visible");
+        this.mode = "artists-profile";
+        break;
+      case "art-profile":
+        profilePage.classList.add("not-visible");
+        artProfile.classList.remove("not-visible");
+        this.mode = "art-profile";
         break;
       default:
         console.error("no such case for changeView() function");
